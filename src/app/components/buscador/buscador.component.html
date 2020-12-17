@@ -1,0 +1,20 @@
+<div class="fast fadeIn">
+
+    <h2 class="display-4 pb-4">Resultados para: <small>"{{strBusqueda}}"</small></h2>
+    <!-- *ngIf funciona en torno a un valor booleano -->
+    <div *ngIf="Resultados.length == 0" class="alert alert-info" role="alert">
+        No se encuentran resultados para el término "<b>{{strBusqueda}}</b>"
+    </div>
+
+    <div *ngIf="Resultados.length != 0" class="card-columns">
+        <div class="card mb-2 fadeIn animated" *ngFor="let Hero of Resultados; let i = index">
+            <img src="{{Hero.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{Hero.nombre}}</h5>
+                <p class="card-text">{{Hero.bio.substring(0,30)}}</p>
+                <small>{{Hero.aparicion}}</small>
+            </div>
+            <button (click)="Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button>
+        </div>
+    </div>
+</div>
