@@ -4,7 +4,7 @@ import { HeroesModel } from '../models/heroes';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class InsertarService {
   url = `http://localhost:3000`;
 

@@ -32,24 +32,24 @@ export class InsertarComponent implements OnInit {
     this.insertarService
       .registarinsertar(this.insertar)
       .then((insertar: any) => {
-        Toast.fire(insertar.msg, '', 'success');
+        Toast.fire(insertar.msg, 'Héroe registrado con éxito', 'success');
         forma.reset();
         this.salida.emit;
       })
       .catch((err: any) => {
-        Toast.fire(err.console, '', 'error');
+        Toast.fire(err.console, 'Hubo un error', 'error');
       });
   }
   actualizar(forma: NgForm) {
     this.insertarService
       .actualizarinsertar(this.idinsertarActualizar, this.insertar)
       .then((insertar: any) => {
-        Toast.fire(insertar.msg, '', 'success');
+        Toast.fire(insertar.msg, 'Héroe actualizado con éxito', 'success');
         forma.reset();
         this.salida.emit;
       })
       .catch((err: any) => {
-        Toast.fire(err.console.error.msg, '', 'error');
+        Toast.fire(err.console.error.msg, 'Hubo un error', 'error');
       });
   }
 
@@ -63,11 +63,11 @@ export class InsertarComponent implements OnInit {
     this.insertarService
       .eliminarHeroe(idinsertar)
       .then((usuario: any) => {
-        Toast.fire(usuario.msg, '', 'success');
+        Toast.fire(usuario.msg, 'Héroe eliminado con éxito', 'success');
         this.salida.emit;
       })
       .catch((err: any) => {
-        Toast.fire(err.console.error.msg, '', 'error');
+        Toast.fire(err.console.error.msg, 'Hubo un error', 'error');
       });
   }
 

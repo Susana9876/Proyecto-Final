@@ -47,12 +47,12 @@ export class HeroComponent implements OnInit {
     this.insertarService
       .actualizarinsertar(this.idHeroeActualizar, this.HeroeM)
       .then((usuario: any) => {
-        Toast.fire(usuario.msg, '', 'success');
+        Toast.fire(usuario.msg, 'Héroe actualizado con éxito', 'success');
         forma.reset();
         // this.salida.emit();
       })
       .catch((err: any) => {
-        Toast.fire(err.console.error.msg, '', 'error');
+        Toast.fire(err.console.error.msg, 'Hubo un error', 'error');
       });
   }
 
@@ -67,11 +67,11 @@ export class HeroComponent implements OnInit {
     this.insertarService
       .eliminarHeroe(idHero)
       .then((heroe: any) => {
-        Toast.fire(heroe.msg, 'la disponibilidad ahora es falsa', 'success');
+        Toast.fire(heroe.msg, 'Héroe eliminado con éxito', 'success');
         // this.salida.emit();
       })
       .catch((err: any) => {
-        Toast.fire(err.console.error.msg, 'no se pudo eliminar', 'error');
+        Toast.fire(err.console.error.msg, 'Hubo un error', 'error');
       });
   }
   Regresar(){

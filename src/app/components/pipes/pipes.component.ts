@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PipesComponent implements OnInit {
 
   Nombre = 'Susana Alba Najera';
-  // NombreAlterno = 'SuSaNa AlBa NaJeRa';
+  NombreAlterno = 'SuSaNa AlBa NaJeRa';
   videoUrl = 'https://www.youtube.com/embed/zELJwqVsHh4?start=80'
   arrayPrueba = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'K'];
   mostrar = true;

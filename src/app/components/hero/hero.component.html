@@ -3,10 +3,7 @@
         <h2 class="col-10">{{hero.nombre}} - <small>{{hero.aparicion}}</small></h2>
         <div class="col-2">
             <button [routerLink]="['/heros']" class="btn btn-outline-primary btn-block">Regresar</button>
-            <button class="btn btn-outline-danger btn-block" (click)="elimiar(hero._id)">Eliminar</button>
-            <button type="button" class="btn btn-outline-warning btn-block" (click)="dispararActualizar(hero._id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Actualizar
-              </button>
+            
         </div>
     </div>
 
@@ -23,6 +20,13 @@
         </div>
     </div>
 </div>
+
+<hr>
+    <button class="btn btn-outline-danger btn-block" (click)="elimiar(hero._id)">Eliminar</button>
+        <button type="button" class="btn btn-outline-warning btn-block" (click)="dispararActualizar(hero._id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Actualizar
+          </button>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -37,20 +41,20 @@
                         <form (ngSubmit)="actualizar(forma)" #forma="ngForm">
                             
                             <div class="input-group-prepend">
-                                <span class="input-group-text col-1">Nombre</span>
-                                <input type="text" class="form-control" name="nombre" [(ngModel)]="HeroeM.nombre" required/>
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre" [(ngModel)]="HeroeM.nombre" required/>
                             </div><br>
                             <div class="input-group-prepend">
-                                <span class="input-group-text col-1">Bio</span>
-                                <input type="text" class="form-control" name="bio" [(ngModel)]="HeroeM.bio" />
+                                <label class="form-label">Biografía</label>
+                                <input type="text" class="form-control" name="bio" placeholder="Ingresa la biografía" [(ngModel)]="HeroeM.bio" />
                             </div><br>
                             <div class="input-group-prepend">
-                                <span class="input-group-text col-1">Aparicion</span>
-                                <input type="text" class="form-control" name="aparicion" [(ngModel)]="HeroeM.aparicion" required/>
+                                <label class="form-label">Aparición</label>
+                                <input type="date" class="form-control" name="aparicion" placeholder="Ingresa la fecha de aparición" [(ngModel)]="HeroeM.aparicion" required/>
                             </div> <br>
                             <div class="input-group-prepend">
-                                <span class="input-group-text col-1">Casa</span>
-                                <input type="text" class="form-control" name="casa" [(ngModel)]="HeroeM.casa" required/>
+                                <label class="form-label">Casa</label>
+                                <input type="text" class="form-control" name="casa" placeholder="Ingresa la casa" [(ngModel)]="HeroeM.casa" required/>
                             </div> <br>
                             <button type="submit" class="btn btn-block btn-outline-warning">Actualizar</button>
                         </form>
@@ -59,3 +63,5 @@
             </div>
         </div>
     </div>
+
+    
